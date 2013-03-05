@@ -16,8 +16,8 @@
 #import "AmazonAbstractWebServiceClient.h"
 #import "AmazonStaticCredentialsProvider.h"
 #import "AmazonEndpoints.h"
-#import "DynamoDBRequest.h"
-#import "DynamoDBResponse.h"
+//#import "DynamoDBRequest.h"
+//#import "DynamoDBResponse.h"
 
 @implementation AmazonAbstractWebServiceClient
 
@@ -70,14 +70,14 @@
     id       response = [[NSClassFromString(responseClassName) alloc] init];
 
     if (nil == response) {
-        if([request isKindOfClass:[DynamoDBRequest class]])
-        {
-            response = [DynamoDBResponse new];
-        }
-        else
-        {
+//        if([request isKindOfClass:[DynamoDBRequest class]])
+//        {
+//            response = [DynamoDBResponse new];
+//        }
+//        else
+//        {
             response = [AmazonServiceResponse new];
-        }
+//        }
     }
 
     return [response autorelease];
